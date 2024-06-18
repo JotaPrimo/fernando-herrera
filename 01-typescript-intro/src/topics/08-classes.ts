@@ -6,6 +6,17 @@ export class Person {
         private address: string = 'No Address') {}
 }
 
+export class Hero extends Person {
+    constructor(
+        public alterEgo: string,
+        public age: number,
+        public realName: string
+    ) {
+        super(realName, 'New York');
+    }
+}
 
-const ironman = new Person('Jota Santos');
+const ironman = new Hero('Jota Santos', 45, 'Tony Stark');
 console.log(ironman);
+
+
