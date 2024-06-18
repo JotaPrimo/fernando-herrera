@@ -24,9 +24,13 @@ const audioPlayer: AudioPlayer = {
 const { song,songDuration:duration } = audioPlayer;
 const { author } = audioPlayer.details;
 
-console.log('SONG : ', song);
-console.log('SON : ', duration);
+// console.log('SONG : ', song);
+// console.log('SON : ', duration);
 
-console.log('author: ', author);
+// console.log('author: ', author);
+
+const [, , p3 = 'Not found'] = ['Goku', 'Vegeta'];
+console.error(p3);
+
 
 
