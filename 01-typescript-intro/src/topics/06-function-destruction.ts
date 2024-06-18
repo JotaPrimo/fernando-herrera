@@ -1,15 +1,15 @@
-interface Product {
-    descption: string;
+export interface Product {
+    description: string;
     price: number;
 }
 
 const phone: Product = {
-    descption: 'Nokia A1',
+    description: 'Nokia A1',
     price: 150.0
 }
 
 const notebook: Product = {
-    descption: 'Lenovo Idea Pad 320',
+    description: 'Lenovo Idea Pad 320',
     price: 3150.0
 }
 
@@ -18,7 +18,7 @@ interface TaxCalculationOptions {
     products: Product[];
 }
 
-function taxCalculation(options: TaxCalculationOptions): [number, number] {
+export function taxCalculation(options: TaxCalculationOptions): [number, number] {
     let total = 0;
 
     options.products.forEach( ({ price }) => {
@@ -39,6 +39,3 @@ const [ total, totalTax] = taxCalculation({
 console.log('Total ', total);
 console.log('Tax', totalTax);
 
-
-
-export {}
