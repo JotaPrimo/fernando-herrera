@@ -28,4 +28,11 @@ export class MainPageComponent {
       power: 1890,
     },
    ];
+
+   onNewCharcter(character: Character): void {
+    console.log('main page');
+    this.characters.push(character)
+    console.log(character);
+   }
+
 }
