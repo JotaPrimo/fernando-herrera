@@ -10,6 +10,7 @@ import { CounterComponent } from './counter/counter.component';
 
 // modules
 import { HeroesModule } from './heroes/heroes.module';
+import { DbzModule } from './dbz/dbz.module';
 
 // componentes de outros modulos devem ser declarados em declarations
 // para que possam ser usados
@@ -22,7 +23,8 @@ import { HeroesModule } from './heroes/heroes.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeroesModule
+    HeroesModule,
+    DbzModule
   ],
   providers: [],
   bootstrap: [AppComponent]
