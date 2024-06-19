@@ -10,10 +10,13 @@
 
 
   <td>Método:</td>
-  <dd>nome</dd>
+  <dd>{{ getHeroDescription() }}</dd>
 
   <td>Capitalizado:</td>
-  <dd>nome</dd>
+  <dd>{{ capitalizedName }}</dd>
+
+  <td>Descripton</td>
+  <dd></dd>
 </dl>
 
 <button (click)="cambiarName()" class="btn btn-sm btn-primary mx-2">Mudar nome</button>
