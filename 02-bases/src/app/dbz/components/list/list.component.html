@@ -2,6 +2,7 @@
 <ul class="list-group">
   <li
     class="list-group-item"
+    [ngClass]="{'list-group-item-primary': isFirst}"
     *ngFor="let character of characterList; let i=index; let isFirst = first; let isLast = last;">
     <span class="text-primary">{{ i + 1 }}.</span>
     <span>{{ character.name }}</span>
