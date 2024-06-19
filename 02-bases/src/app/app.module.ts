@@ -6,8 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 // componentes
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
-import { HeroComponent } from './heroes/hero/hero.component';
-import { ListComponent } from './heroes/list/list.component';
+
+
+// modules
+import { HeroesModule } from './heroes/heroes.module';
 
 // componentes de outros modulos devem ser declarados em declarations
 // para que possam ser usados
@@ -15,13 +17,12 @@ import { ListComponent } from './heroes/list/list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent,
-    HeroComponent,
-    ListComponent
+    CounterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HeroesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

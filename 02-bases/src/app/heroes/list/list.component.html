@@ -1,1 +1,6 @@
-<p>list of heroes works!</p>
+<h3>Listado de heores</h3>
+
+
+<ul class="mt-2 list-group">
+  <li class="list-group-item" *ngFor="let heroName of heroNames; let i=index">{{ i }} - {{ heroName }}</li>
+</ul>
