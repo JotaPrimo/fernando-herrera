@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { v4 as uuid } from 'uuid';
 
 // interfaces
 import { Character } from '../interfaces/character.interface';
@@ -9,14 +10,17 @@ export class DBZService {
 
   public characters: Character[] = [
     {
+      id: uuid(),
       name: 'Krillin',
       power: 1000,
     },
     {
+      id: uuid(),
       name: 'Goku',
       power: 8500,
     },
     {
+      id: uuid(),
       name: 'Gohan',
       power: 1500,
     },
@@ -24,9 +28,13 @@ export class DBZService {
 
   // é um listener
   onNewCharcterFromElementoPai(character: Character): void {
-    console.log('main page');
+
+  const newCharacter: Character = {
+    id: uuid(),
+   ...character
+  }
+
     this.characters.push(character);
-    console.log(character);
   }
 
   // listener for event delete
@@ -35,4 +43,10 @@ export class DBZService {
 
     this.characters.splice(index, 1);
   }
+
+  onDeleteCharacterById(id: string): void {
+    console.log('onDeleteCharacter jota');
+    this.characters = this.characters.filter(character => character.id !== id);
+  }
+
 }
