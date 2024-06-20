@@ -8,20 +8,24 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class AddCharacterComponent {
 
+  // emissor de filho para pai
   @Output() // conecta com a propriedade que quero ouvir no elemtento pai
-  onNewCharacter: EventEmitter<Character> = new EventEmitter();
+  onNewCharacterFromElementoFilho: EventEmitter<Character> = new EventEmitter();
 
+  // valor emitido
   public character: Character = {
     name: '',
     power: 0
   }
 
-  emitCharacter(): void {
+
+  // funcao que emite
+  emitCharacterFromElementoFilho(): void {
     console.log(this.character);
 
     if(this.character.name.length === 0 ) return;
 
-    this.onNewCharacter.emit(this.character)
+    this.onNewCharacterFromElementoFilho.emit(this.character)
 
     this.character.name = '';
     this.character.power = 0;

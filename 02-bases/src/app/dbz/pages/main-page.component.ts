@@ -6,6 +6,7 @@ import { Character } from '../interfaces/character.interface';
   templateUrl: './main-page.component.html',
 })
 export class MainPageComponent {
+
   public characters: Character[] = [
     {
       name: 'Krillin',
@@ -19,20 +20,20 @@ export class MainPageComponent {
       name: 'Gohan',
       power: 1500,
     },
-    {
-      name: 'Raditz',
-      power: 1345,
-    },
-    {
-      name: 'Tien',
-      power: 1890,
-    },
    ];
 
-   onNewCharcter(character: Character): void {
+   // é um listener
+   onNewCharcterFromElementoPai(character: Character): void {
     console.log('main page');
     this.characters.push(character)
     console.log(character);
+   }
+
+   // listener for event delete
+   onDeleteCharacter(index: number): void {
+   console.log("onDeleteCharacter jota");
+
+    this.characters.splice(index, 1);
    }
 
 }
