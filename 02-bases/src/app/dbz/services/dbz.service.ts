@@ -6,7 +6,6 @@ import { Character } from '../interfaces/character.interface';
 
 @Injectable({ providedIn: 'root' }) //  isto torna o comportamento da classe como service
 export class DBZService {
-  constructor() {}
 
   public characters: Character[] = [
     {

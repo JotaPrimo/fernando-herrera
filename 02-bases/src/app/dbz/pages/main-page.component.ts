@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 // services
 import { DBZService } from '../services/dbz.service';
+import { Character } from '../interfaces/character.interface';
 
 
 @Component({
@@ -14,5 +15,10 @@ export class MainPageComponent {
 constructor(
  public dbzService: DBZService
 ) {}
+
+
+get characters(): Character[] {
+  return this.dbzService.characters;
+}
 
 }
