@@ -10,6 +10,7 @@ import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.
 
 import { CountriesRoutingModule } from './countries-routing.module';
 import { CountryPageComponent } from './pages/country-page/country-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   {}
@@ -24,7 +25,8 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    CountriesRoutingModule
+    CountriesRoutingModule,
+    SharedModule
   ],
 })
 export class CountriesModule {}

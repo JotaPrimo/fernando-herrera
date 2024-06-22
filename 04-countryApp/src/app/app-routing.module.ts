@@ -27,7 +27,7 @@ const routes: Routes = [
   {
     // qualquer rota não definida será redirecionada para a rota 'home'
     path: '**',
-    redirectTo: 'home'
+    redirectTo: 'countries'
   }
 ];
 

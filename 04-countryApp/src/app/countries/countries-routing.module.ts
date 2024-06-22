@@ -26,6 +26,11 @@ const routes: Routes = [
     path: 'by/:id',
     component: CountryPageComponent,
   },
+  {
+    // qualquer rota não definida será redirecionada para a rota 'home'
+    path: '**',
+    redirectTo: 'by-capital'
+  }
 ];
 
 @NgModule({
