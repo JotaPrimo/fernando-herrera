@@ -39,7 +39,6 @@ export class GifsService {
       // subscribe me inscrevendo para ouvir as respostas enviadas
       .subscribe( res => {
         this.gifList = res.data;
-        console.log(res.data);
       })
 
     // rquisições http posso usar asynce await por que retornam promisses
