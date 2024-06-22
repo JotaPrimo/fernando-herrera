@@ -1,14 +1,21 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+const GIPHY_API_KEY = 'euxin7SSGxz3BATEpactx7SQHUxB1Qwj';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GifsService {
-  constructor() {}
+  constructor(
+    private http: HttpClient
+  ) {}
 
   // atributo para guardar dados da listagem
   // isto é para encapsular os dados de forma segura
   private _tagsHistory: string[] = [];
+  private apiKey:       string = 'euxin7SSGxz3BATEpactx7SQHUxB1Qwj';
+  private serviceUrl:   string = 'https://api.giphy.com/v1/gifs';
 
   // isto é para expor dados
   get tagsHistory() {
@@ -18,6 +25,23 @@ export class GifsService {
   searchTag(tag: string): void {
     if (tag.trim().length === 0) return;
     this.organizeHistory(tag);
+
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('limit', 10)
+      .set('q', tag)
+
+    this.http
+      .get(`${ this.serviceUrl }/trending`, { params })
+      // subscribe me inscrevendo para ouvir as respostas enviadas
+      .subscribe(res => {
+        console.log(res);
+      })
+
+    // rquisições http posso usar asynce await por que retornam promisses
+    // then só posso usar em promisses
+
+
   }
 
   // separando lógica
