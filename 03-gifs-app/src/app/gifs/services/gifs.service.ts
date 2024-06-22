@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Gif, SearchResponse } from '../interfaces/gisf.interfaces';
 
 const GIPHY_API_KEY = 'euxin7SSGxz3BATEpactx7SQHUxB1Qwj';
 
@@ -10,6 +11,8 @@ export class GifsService {
   constructor(
     private http: HttpClient
   ) {}
+
+  public gifList: Gif[] = [];
 
   // atributo para guardar dados da listagem
   // isto é para encapsular os dados de forma segura
@@ -32,10 +35,11 @@ export class GifsService {
       .set('q', tag)
 
     this.http
-      .get(`${ this.serviceUrl }/trending`, { params })
+      .get<SearchResponse>(`${ this.serviceUrl }/trending`, { params })
       // subscribe me inscrevendo para ouvir as respostas enviadas
-      .subscribe(res => {
-        console.log(res);
+      .subscribe( res => {
+        this.gifList = res.data;
+        console.log(res.data);
       })
 
     // rquisições http posso usar asynce await por que retornam promisses
