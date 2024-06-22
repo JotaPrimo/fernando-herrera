@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
+// modules
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+// components
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -10,8 +12,8 @@ import { SharedModule } from './shared/shared.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     SharedModule
   ],
   providers: [],
