@@ -11,6 +11,7 @@ import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.
 import { CountriesRoutingModule } from './countries-routing.module';
 import { CountryPageComponent } from './pages/country-page/country-page.component';
 import { SharedModule } from '../shared/shared.module';
+import { CountryTableComponent } from './components/country-table/country-table.component';
 
 const routes: Routes = [
   {}
@@ -22,6 +23,7 @@ const routes: Routes = [
     ByCountryPageComponent,
     ByRegionPageComponent,
     CountryPageComponent,
+    CountryTableComponent
   ],
   imports: [
     CommonModule,
