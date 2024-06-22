@@ -16,8 +16,6 @@ export class SearchBoxComponent implements OnInit {
   public placeholder: string = '';
 
   searchOfNewTerm(value: string): void {
-    console.log('SearchBoxComponent.emitValueSearch', value);
-
     this.searchEvent.emit(value);
   }
 }

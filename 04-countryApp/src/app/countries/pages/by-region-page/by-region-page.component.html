@@ -1,3 +1,11 @@
-<p>
-  by-region works!
-</p>
+<h2>Por Region</h2>
+<hr>
+
+<shared-search-box
+  (searchEvent)="searchByRegiao( $event )"
+  [placeholder]="'Buscar por região'">
+</shared-search-box>
+
+<hr>
+<country-table [countries]="countries"></country-table>
+

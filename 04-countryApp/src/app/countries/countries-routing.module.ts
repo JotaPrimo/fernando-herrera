@@ -27,18 +27,19 @@ const routes: Routes = [
     component: CountryPageComponent,
   },
   {
-    // qualquer rota não definida será redirecionada para a rota 'home'
     path: '**',
     redirectTo: 'by-capital'
   }
-];
+
+]
+
 
 @NgModule({
   imports: [
-    RouterModule.forChild( routes ),
+    RouterModule.forChild( routes )
   ],
-  exports: [ RouterModule ],
-  declarations: [],
-  providers: [],
+  exports: [
+    RouterModule
+  ],
 })
-export class CountriesRoutingModule {}
+export class CountriesRoutingModule { }
