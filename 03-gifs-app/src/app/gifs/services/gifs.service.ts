@@ -25,27 +25,25 @@ export class GifsService {
     return [...this._tagsHistory]; // isto retorna uma copia dos dados, não os dados em si
   }
 
-  searchTag(tag: string): void {
-    if (tag.trim().length === 0) return;
+  searchTag( tag: string ):void {
+    if ( tag.length === 0 ) return;
     this.organizeHistory(tag);
 
     const params = new HttpParams()
-      .set('api_key', this.apiKey)
-      .set('limit', 10)
-      .set('q', tag)
+      .set('api_key', this.apiKey )
+      .set('limit', '10' )
+      .set('q', tag )
 
-    this.http
-      .get<SearchResponse>(`${ this.serviceUrl }/trending`, { params })
-      // subscribe me inscrevendo para ouvir as respostas enviadas
-      .subscribe( res => {
-        this.gifList = res.data;
-      })
+    this.http.get<SearchResponse>(`${ this.serviceUrl }/search`, { params })
+      .subscribe( resp => {
 
-    // rquisições http posso usar asynce await por que retornam promisses
-    // then só posso usar em promisses
+        this.gifList = resp.data;
+        // console.log({ gifs: this.gifList });
 
+      });
 
   }
+
 
   // separando lógica
   private organizeHistory(tag: string) {
