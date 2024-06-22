@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ByCapitalPageComponent {
 
+
+  // listener
+  listenerSearchBox(capital: string) {
+   
+    console.log('ByCapitalPageComponent.searchByCapital', capital);
+
+    console.log({capital});
+  }
+
 }
