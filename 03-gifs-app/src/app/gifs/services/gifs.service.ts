@@ -57,4 +57,9 @@ export class GifsService {
     this._tagsHistory = this.tagsHistory.splice(0,10);
   }
 
+  private saveLocalStorage(): void {
+    localStorage.setItem('history', JSON.stringify(this._tagsHistory));
+    this.saveLocalStorage();
+  }
+
 }
