@@ -1,21 +1,23 @@
-import { NgModule } from '@angular/core';
+// modules
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+// components
 import { AppComponent } from './app.component';
-import { GifsModule } from './gifs/gifs.module';
+import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
-    BrowserModule,
-    GifsModule,
-    HttpClientModule,
     AppRoutingModule,
+    BrowserModule,
+    HttpClientModule,
+
     SharedModule
   ],
   providers: [],
