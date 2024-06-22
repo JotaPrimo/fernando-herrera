@@ -21,6 +21,10 @@ const routes: Routes = [
     component: ContactPageComponent
   },
   {
+    path: 'countries',
+    loadChildren: () => import('./countries/countries.module').then(m => m.CountriesModule)
+  },
+  {
     // qualquer rota não definida será redirecionada para a rota 'home'
     path: '**',
     redirectTo: 'home'
