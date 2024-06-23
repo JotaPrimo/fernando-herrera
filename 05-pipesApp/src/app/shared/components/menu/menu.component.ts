@@ -17,8 +17,8 @@ export class MenuComponent implements OnInit {
         label: 'Textos e flechas',
         icon: 'pi pi-fw pi-home',
         items: [
-          { label: 'Número', icon: 'pi pi-fw pi-plus' },
-          { label: 'Não comunes', icon: 'pi pi-fw pi-globe' },
+          { label: 'Número', icon: 'pi pi-fw pi-plus', routerLink: 'numbers' },
+          { label: 'Não comunes', icon: 'pi pi-fw pi-globe', routerLink: 'uncommon' },
         ],
       },
       {
