@@ -1,25 +1,32 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Subject, debounceTime } from 'rxjs';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Subject, Subscription, debounceTime } from 'rxjs';
 
 @Component({
   selector: 'shared-search-box',
   templateUrl: './search-box.component.html',
   styleUrls: ['./search-box.component.css'],
 })
-export class SearchBoxComponent implements OnInit {
+export class SearchBoxComponent implements OnInit,OnDestroy {
   // usado para evitar que a função seja chamada muitas vezes
   // é um observable
   private debouncer: Subject<string> = new Subject();
+  private debouncerSubscription?: Subscription;
 
   constructor() {}
 
   ngOnInit() {
-    this.debouncer
+    this.debouncerSubscription = this.debouncer
       .pipe(
         debounceTime(1000)
       )
       .subscribe((value) => this.searchOfNewTerm(value));
   }
+
+  ngOnDestroy(): void {
+    // não preciosar ficar escutando o evento debouncer
+    this.debouncer.unsubscribe();
+  }
+
 
   @Output() searchEvent = new EventEmitter<string>();
   @Output() onDebounce = new EventEmitter<string>();
