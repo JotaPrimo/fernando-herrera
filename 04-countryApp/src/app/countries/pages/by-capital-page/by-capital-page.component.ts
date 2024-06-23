@@ -10,6 +10,7 @@ import { Country } from '../../interfaces/country';
 export class ByCapitalPageComponent {
 
   public countries: Country[] = [];
+  public isLoading: boolean = false;
 
   constructor(
     private countriesService: CountriesService
@@ -17,12 +18,11 @@ export class ByCapitalPageComponent {
 
   // listener
   listenerSearchBox(capital: string) {
-    console.log('ByCapitalPageComponent.searchByCapital', capital);
-    console.log({ capital });
+    this.isLoading = true;
     this.countriesService.searchCapital(capital)
       .subscribe(countries => {
-        console.log({ countries });
         this.countries = countries;
+        this.isLoading = false;
       });
   }
 }

@@ -10,6 +10,7 @@ import { CountriesService } from '../../services/countries.service';
 export class ByRegionPageComponent implements OnInit {
 
   private listCountries: Country[] = [];
+  public isLoading: boolean = false;
 
   constructor(
     private countriesService: CountriesService
@@ -23,10 +24,12 @@ export class ByRegionPageComponent implements OnInit {
   }
 
   public searchByRegiao(regiao: string): void {
+    this.isLoading = true;
     this.countriesService
       .searchByRegion(regiao)
       .subscribe((countries) => {
         this.listCountries = countries;
+        this.isLoading = false;
       });
   }
 

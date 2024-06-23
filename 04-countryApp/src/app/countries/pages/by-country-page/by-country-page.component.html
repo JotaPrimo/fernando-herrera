@@ -7,5 +7,5 @@
 </shared-search-box>
 
 <hr>
-
+<shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
 <country-table [countries]="getCountries"></country-table>
