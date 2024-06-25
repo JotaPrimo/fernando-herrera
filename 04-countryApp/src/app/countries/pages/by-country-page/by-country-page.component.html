@@ -1,0 +1,11 @@
+<h2>Por pais</h2>
+<hr>
+
+<shared-search-box
+  [placeholder]="'Buscar por pais'"
+  (searchEvent)="searchCountry( $event )">
+</shared-search-box>
+
+<hr>
+<shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+<country-table [countries]="getCountries"></country-table>

@@ -1,0 +1,17 @@
+<h1>DBZ personages</h1>
+
+<hr>
+
+<div class="row">
+  <div class="col">
+    <dbz-list
+      [characterList]="dbzService.characters"
+      (eventDelete)="dbzService.onDeleteCharacterById($event)" />
+  </div>
+
+  <div class="col">
+     <!-- juntando as peças: evento do elemento filho c-->
+     <!-- o evento vem do output do elemento filho-->
+   <dbz-add-character (onNewCharacterFromElementoFilho)="dbzService.onNewCharcterFromElementoPai($event)" />
+  </div>
+</div>

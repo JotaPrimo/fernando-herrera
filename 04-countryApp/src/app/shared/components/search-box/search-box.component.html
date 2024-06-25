@@ -1,0 +1,10 @@
+<!-- (keyup.enter)="searchOfNewTerm(searchBoxInput.value)" -->
+<input
+  type="text"
+  name="busca"
+  id="busca"
+  [placeholder]="placeholder"
+  class="form-control"
+  #searchBoxInput
+  (keyup)="onKeyPress( searchBoxInput.value)"
+  >
